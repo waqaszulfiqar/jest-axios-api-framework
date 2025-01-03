@@ -6,9 +6,11 @@ describe("User API Tests", () => {
   let createdUserId;
   const userPage = new UserPage(apiClient);
 
-  it("Should retrieve a list of users", async () => {
-    const response = await userPage.getUsers(testData.users.list);
+  it("Should retrieve a list of users on page 2", async () => {
+    const response = await userPage.getUsers(2);
     expect(response.status).toBe(200);
+    expect(response.data).toHaveProperty("page", 2);
+    expect(response.data).toHaveProperty("per_page");
     expect(response.data).toHaveProperty("data");
     response.data.data.forEach((user) => {
       expect(user).toHaveProperty("id");

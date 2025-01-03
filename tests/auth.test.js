@@ -90,7 +90,7 @@ describe("Authentication Tests", () => {
         password: testData.login.boundary.wrongFormat.password,
       });
     } catch (error) {
-      expect(error).toHaveProperty("error", "wromg email format");
+      expect(error).toHaveProperty("error", "wrong email format");
     }
   });
 });
