@@ -59,7 +59,7 @@ describe("User API Tests", () => {
     }
   });
 
-  // **BUG:** - Should throw error for the large payload but getting Undefined error
+  // **BUG:** - Should throw proper error for the large payload but getting Undefined error
 
   it("Should handle very large payloads", async () => {
     const response = await userPage.createUser(
@@ -101,7 +101,7 @@ describe("User API Tests", () => {
     }
   });
 
-  // **BUG:** - Should throw error for the large payload but getting Undefined error
+  // **BUG:** - Should throw proper error for the large payload but getting Undefined error
 
   it("Should handle very large payloads", async () => {
     const response = await userPage.updateUser(
