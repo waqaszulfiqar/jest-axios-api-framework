@@ -59,7 +59,7 @@ describe("User API Tests", () => {
     }
   });
 
-  // BUG - Should throw error for the large payload but getting Undefined error
+  // **BUG:** - Should throw error for the large payload but getting Undefined error
 
   it("Should handle very large payloads", async () => {
     const response = await userPage.createUser(
@@ -72,7 +72,7 @@ describe("User API Tests", () => {
     );
   });
 
-  // BUG - No proper error for wrong format. Getting Undefined error
+  // **BUG:** - No proper error for wrong format. Getting Undefined error
 
   it("Should handle unexpected data formats", async () => {
     const response = await userPage.createUser(
@@ -101,6 +101,8 @@ describe("User API Tests", () => {
     }
   });
 
+  // **BUG:** - Should throw error for the large payload but getting Undefined error
+
   it("Should handle very large payloads", async () => {
     const response = await userPage.updateUser(
       createdUserId,
@@ -112,6 +114,8 @@ describe("User API Tests", () => {
       testData.login.boundary.largePayload.password
     );
   });
+
+  // **BUG:** - No proper error for wrong format. Getting Undefined error
 
   it("Should handle unexpected data formats", async () => {
     const response = await userPage.updateUser(
